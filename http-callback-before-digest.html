@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="httpDigest">
+<head>
+
+</head>
+<body>
+    <div ng-controller="httpDigest"></div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('httpDigest',[
+
+        ]).controller('httpDigest', function($http) {
+            var root = 'http://jsonplaceholder.typicode.com';
+            $http({
+                url: root + '/posts/1',
+                method: 'GET'
+            }).then(function(response) {
+                console.log(response.data);
+            });
+        });
+
+    </script>
+</body>
+</html>

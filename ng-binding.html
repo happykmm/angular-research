@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+
+</head>
+<body>
+    <div ng-controller="CounterCtrl">
+        <span ng-bind="counter"></span>
+        <button ng-click="counter=counter+1">increase</button>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('myApp', [
+
+        ]).controller('CounterCtrl', CounterCtrl);
+
+        function CounterCtrl($scope) {
+            $scope.counter = 1;
+            setInterval(function() {
+                console.log($scope.counter);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
