@@ -7,7 +7,16 @@
 
     <script src="bower_components/es6-promise/es6-promise.js"></script>
     <script>
-
+        var promise = new Promise(function(resolve, reject){
+            resolve("resolve would not finish current function");
+            reject("either resolve or reject would be involved");
+            console.log("current function finished");
+        });
+        promise.then(function(value){
+            console.log(value);
+        }).catch(function(error){
+            console.error(error);
+        });
     </script>
 </body>
 </html>
